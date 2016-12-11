@@ -19,4 +19,4 @@ class Cacher {
   }
 }
 
-export default new Cacher()
+export default Cacher
