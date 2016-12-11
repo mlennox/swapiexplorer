@@ -1,0 +1,3 @@
+rootProject.name = 'swapiexplorer'
+
+include ':app'
