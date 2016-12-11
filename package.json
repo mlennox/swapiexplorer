@@ -17,6 +17,7 @@
 		"react-test-renderer": "15.4.1"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+    "testRegex": "\\.spec\\.js"
 	}
 }
