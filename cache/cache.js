@@ -1,6 +1,6 @@
 class Cacher {
   constructor() {
-    this.memcache = {}
+    this.reset()
   }
 
   fetch(key, fetcher) {
@@ -12,6 +12,10 @@ class Cacher {
       .then(result => result)
     this.memcache[key] = value
     return value
+  }
+
+  reset() {
+    this.memcache = {}
   }
 }
 
