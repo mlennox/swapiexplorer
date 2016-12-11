@@ -34,3 +34,5 @@ Sorry, I'm 100% convinced these should be placed beside the source they are test
 
 #### Code coverage 
 Great, yeah, built-in like most decent test frameworks these days. Seems fine.
+
+![Coverage reports](./coverages.png)
