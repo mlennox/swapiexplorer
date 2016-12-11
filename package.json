@@ -19,6 +19,8 @@
 	},
 	"jest": {
 		"preset": "react-native",
-    "testRegex": "\\.spec\\.js"
+    	"testRegex": "\\.spec\\.js",
+		"collectCoverage": true,
+		"collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/*.spec.js", "!coverage/**/*.js"]
 	}
 }

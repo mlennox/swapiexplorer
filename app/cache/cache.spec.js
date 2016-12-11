@@ -7,35 +7,31 @@ afterEach(() => {
 })
 
 it('calling fetch with unknown key will run fetcher', async () => {
-  let fetch_mock = () => {
-    return new Promise((resolve,reject) => {
+  let fetcher_called = false
+
+  let fetcher = () => new Promise(resolve => {
+      fetcher_called = true
       resolve()
     })
-  }
-
-  const fetcher = jest.fn(fetch_mock)
 
   await Cache.fetch('some key', fetcher)
 
-  expect(fetcher)
-    .toHaveBeenCalled()
+  expect(fetcher_called).toBe(true)
 })
 
 it('calling fetch with known key will not run fetcher', async () => {
+  let fetcher_called = false
 
   // we will prime the cache with our value
   await Cache.fetch('some key', () => successful('some value'))
 
+  let fetcher = () => new Promise(resolve => {
+    fetcher_called = true
+    resolve()
+  })
 
-  let fetch_mock = () => successful('some other value')
+  await Cache.fetch('some key', fetcher)
 
-  const fetcher = jest.fn(fetch_mock)
-
-  let result = await Cache.fetch('some key', fetcher)
-
-  expect(fetcher)
-    .not.toHaveBeenCalled()
-
-  expect(result)
-    .toBe('some value')
+  expect(fetcher_called)
+    .toBe(false)
 })
