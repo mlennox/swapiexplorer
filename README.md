@@ -48,7 +48,7 @@ Great, yeah, built-in like most decent test frameworks these days. Seems fine.
 
 ![Coverage reports](./coverages.png)
 
-This is easily setup useing globbing patterns to include the files you want to find coverage on and exclude the ones you dont - tests files, coverage reports, node_modules etc.
+This is easily setup using globbing patterns to include the files you want to find coverage on and exclude the ones you don't - tests files, coverage reports, node_modules etc.
 
     "jest": {
             "preset": "react-native",
