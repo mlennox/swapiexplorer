@@ -11,6 +11,8 @@ I don't like Jamsine, and because Jest appears to be a 'better Jasmine' in many 
 #### Jasmine...
 ![Globals! Globals everywhere](./globals.jpg)
 
+'Nuff said.
+
 
 #### \__MOCKS\__
 I don't really see the point of writing such individual test-specific mocks in a separate file in a separate folder.
@@ -32,7 +34,26 @@ Now, I have to admit to using these but some people say they are a code smell, a
 #### \__TESTS\__
 Sorry, I'm 100% convinced these should be placed beside the source they are testing. Having them in a separate folder seems so archaic and wrong-headed.
 
+Having said that, it is simple to update the *package.json* to allow them to be picked up from wherever they are in the code
+
+    "jest": {
+        "preset": "react-native",
+            :
+            "testRegex": "\\.spec\\.js"
+            :
+    }
+
 #### Code coverage 
 Great, yeah, built-in like most decent test frameworks these days. Seems fine.
 
 ![Coverage reports](./coverages.png)
+
+This is easily setup useing globbing patterns to include the files you want to find coverage on and exclude the ones you dont - tests files, coverage reports, node_modules etc.
+
+    "jest": {
+            "preset": "react-native",
+            :
+            "collectCoverage": true,
+            "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/*.spec.js", "!coverage/**/*.js"]
+            :
+    }
