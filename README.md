@@ -1,7 +1,7 @@
 # Star Wars API explorer
 
 ## Jest
-I can't say I'm liking it much as I don't like Jamsine much and it uses Jasmine as a stepping-off point, I prefer AVA which sorta, kinda, mostly is based on TAP. 
+I can't say I'm liking it much as I don't like Jasmine much and it uses Jasmine as a stepping-off point, I prefer AVA which sorta, kinda, mostly is based on TAP. 
 
 I'll stick with it and learn it as it *is* the default and apparently *snapshots* are wonderful.
 
@@ -57,3 +57,10 @@ This is easily setup using globbing patterns to include the files you want to fi
             "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/*.spec.js", "!coverage/**/*.js"]
             :
     }
+    
+Update: actually, we have a problem here. If I run the tests using 'watch' the first run looks like this
+
+![Coverage reports](./firstruncover.png)
+
+the subsequent runs look like the previous results, as do any results when I run the tests without the watch statement. Looks like a bug to me :/ 
+
