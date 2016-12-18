@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest --watch && ava",
-    "test:nowatch": "jest"
+    "test": "nyc ava"
   },
   "dependencies": {
     "react": "15.4.1",
@@ -28,6 +27,11 @@
       "**/*.{js,jsx}",
       "!**/*.test.js"
     ],
-    "babel": "inherit"
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "babel-polyfill",
+      "react-native-mock/mock"
+    ]
   }
 }
