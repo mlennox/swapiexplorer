@@ -1,18 +1,10 @@
 import test from 'ava'
+import React from 'react';
+import { shallow } from 'enzyme'
 
-test('will fail', t => {
-  t.is(true,false)
+import Index from './index.android.js';
+
+test('renders correctly', t => {
+  const wrapper = shallow(<Index />)
+  t.truthy(wrapper.children().length > 0)
 })
-
-// import 'react-native';
-// import React from 'react';
-// import Index from './index.android.js';
-//
-// // Note: test renderer must be required after react-native.
-// import renderer from 'react-test-renderer';
-//
-// it('renders correctly', () => {
-//   const tree = renderer.create(
-//     <Index />
-//   );
-// });
