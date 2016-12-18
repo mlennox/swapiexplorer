@@ -1,26 +1,33 @@
 {
-	"name": "swapiexplorer",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest --watch",
-		"test:nowatch": "jest"
-	},
-	"dependencies": {
-		"react": "15.4.1",
-		"react-native": "0.39.1"
-	},
-	"devDependencies": {
-		"babel-jest": "17.0.2",
-		"babel-preset-react-native": "1.9.0",
-		"jest": "17.0.3",
-		"react-test-renderer": "15.4.1"
-	},
-	"jest": {
-		"preset": "react-native",
-    	"testRegex": "\\.test\\.js",
-		"collectCoverage": true,
-		"collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/*.test.js", "!coverage/**/*.js"]
-	}
+  "name": "swapiexplorer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest --watch && ava",
+    "test:nowatch": "jest"
+  },
+  "dependencies": {
+    "react": "15.4.1",
+    "react-native": "0.39.1"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-preset-react-native": "1.9.0",
+    "enzyme": "^2.6.0",
+    "mockery": "^2.0.0",
+    "nyc": "^10.0.0",
+    "react-addons-test-utils": "^15.4.1",
+    "react-native-mock": "^0.2.9"
+  },
+  "ava": {
+    "files": [
+      "**/*.test.js"
+    ],
+    "source": [
+      "**/*.{js,jsx}",
+      "!**/*.test.js"
+    ],
+    "babel": "inherit"
+  }
 }
