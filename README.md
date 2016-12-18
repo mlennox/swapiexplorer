@@ -1,5 +1,7 @@
 # Star Wars API explorer
 
+This is a react-native app that uses the wonderful Star Wars API. The intention is to produce an app that allows you to navigate around the data in a variety of ways. 
+
 ## Jest
 I can't say I'm liking it much as I don't like Jasmine much and it uses Jasmine as a stepping-off point, I prefer AVA which sorta, kinda, mostly is based on TAP. 
 
