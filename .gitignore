@@ -43,3 +43,4 @@ android/app/libs
 
 # app specific
 coverage/
+.nyc_output
