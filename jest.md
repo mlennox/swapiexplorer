@@ -1,5 +1,7 @@
 ## Jest
 
+NOTE: I gave up on Jest in the end because due to 'death by a thousand cuts' syndrome. It shouldn't be this hard to get properly working tests.
+
 I can't say I'm liking it much as I don't like Jasmine much and it uses Jasmine as a stepping-off point, I prefer AVA which sorta, kinda, mostly is based on TAP. 
 
 I'll stick with it and learn it as it *is* the default and apparently *snapshots* are wonderful.
