@@ -3,13 +3,24 @@ import test from 'ava'
 
 const Cache = new _cache()
 
-test('calling fetch with unknown key will run fetcher', async t => {
+const fetcher_stub = (will_resolve) => {
   let fetcher_called = false
-  Cache.fetch('some key', () => new Promise((resolve, reject) => {
-      fetcher_called = true;
-      resolve()
-    }))
-  t.is(true, fetcher_called)
+  return {
+    called: () => fetcher_called,
+    fetcher: () => new Promise((resolve, reject) => {
+      fetcher_called = true
+      if (will_resolve){
+        resolve('success')
+      }
+      reject()
+    })
+  }
+}
+
+test('calling fetch with unknown key will run fetcher', async t => {
+  let stub = fetcher_stub(true)
+  await Cache.fetch('some key', stub.fetcher)
+  t.is(true, stub.called())
 })
 
 test('calling fetch with known key will NOT run fetcher', async t => {

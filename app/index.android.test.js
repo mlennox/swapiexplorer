@@ -1,3 +1,9 @@
+import test from 'ava'
+
+test('will fail', t => {
+  t.is(true,false)
+})
+
 // import 'react-native';
 // import React from 'react';
 // import Index from './index.android.js';
