@@ -1,5 +1,5 @@
 import test from 'ava'
-import React from 'react';
+import React, {Component} from 'react';
 import { shallow } from 'enzyme'
 
 import Index from './index.android.js';
