@@ -3,4 +3,4 @@ import homepage from './app/home/homepage'
 
 export default homepage
 
-AppRegistry.registerComponent('homepage', () => homepage);
+AppRegistry.registerComponent('swapiexplorer', () => homepage);
