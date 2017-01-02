@@ -19,5 +19,10 @@ export const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  h1: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  }
 });
 
