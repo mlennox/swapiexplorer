@@ -26,16 +26,22 @@ export default class homepage extends Component {
 
 
   render() {
+
     return (
       <View style={styles.container}>
         <Text style={styles.h1}>Star Wars API explorer</Text>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={NavRow}
+          renderRow={this.NavRow.bind(this)}
         />
       </View>
     );
   }
+
+  NavRow = (rowData) => <Button title={rowData} onPress={() => PressHandler(rowData)}></Button>
 }
 
-const NavRow = (rowData) => <Button title={rowData} onPress={() => {}}></Button>
+const PressHandler = (datum) => {
+  console.log(datum)
+}
+
