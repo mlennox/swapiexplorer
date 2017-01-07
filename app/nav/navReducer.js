@@ -1,9 +1,11 @@
 import { NavigationExperimental } from 'react-native'
+import { default_scene } from './scenes'
+
 const { NavigationStateUtils } = NavigationExperimental;
 
 const default_route = {
   index: 0,
-  routes: [{key: 'Home'}]
+  routes: [{key: default_scene}]
 }
 
 export default (state, action, route) => {

@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+
 import Films from '../films/index'
 import Home from '../home/index'
 import People from '../people/index'
@@ -5,6 +7,8 @@ import Planets from '../planets/index'
 import Species from '../species/index'
 import Starships from '../starships/index'
 import Vehicles from '../vehicles/index'
+
+export const default_scene = 'Home'
 
 const scenes = {
   Films: <Films />,
@@ -16,6 +20,6 @@ const scenes = {
   Vehicles: <Vehicles />
 }
 
-scenes.Default = scenes.Home
+scenes.Default = scenes[default_scene]
 
 export default scenes
