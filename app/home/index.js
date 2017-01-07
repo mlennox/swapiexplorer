@@ -19,7 +19,7 @@ export default class homepage extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.h1}>Star Wars API explorer</Text>
-        <NavList/>
+        <NavList />
       </View>
     );
   }

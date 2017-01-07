@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native';
-import homepage from './app/home/homepage'
+import App from './app/nav/MainNav'
 
-export default homepage
+export default App
 
-AppRegistry.registerComponent('swapiexplorer', () => homepage);
+AppRegistry.registerComponent('swapiexplorer', () => App);

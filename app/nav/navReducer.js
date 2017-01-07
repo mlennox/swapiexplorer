@@ -1,19 +1,21 @@
 import { NavigationExperimental } from 'react-native'
-const { NavStateUtils } = NavigationExperimental;
+const { NavigationStateUtils } = NavigationExperimental;
 
-export default (navState, action) => {
-  const {
-    type,
-    key
-  } = action;
+const default_route = {
+  index: 0,
+  routes: [{key: 'Home'}]
+}
 
-  switch (type) {
+export default (state, action, route) => {
+  if (!state) {
+    return default_route
+  }
+  switch (action) {
     case 'push':
-      const route = {key}
-      return NavStateUtils.push(navState, route)
+      return NavigationStateUtils.push(state, route)
     case 'pop':
-      return NavStateUtils.pop(navState)
+      return NavigationStateUtils.pop(state)
     default:
-      return navState
+      return state
   }
 }

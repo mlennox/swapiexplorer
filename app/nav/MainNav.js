@@ -1,46 +1,33 @@
 import React, { Component } from 'react'
 import { NavigationExperimental } from 'react-native'
-
-// import Films from '../films/index'
-import Home from '../home/index'
-// import People from '../people/index'
-// import Planets from '../planets/index'
-// import Species from '../species/index'
-// import Starships from '../starships/index'
-// import Vehicles from '../vehicles/index'
-
+import reducer from './navReducer'
+import scenes from './scenes'
 
 const {
-  CardStack: NavigationCardStack,
-  StateUtils: NavigationStateUtils
+  CardStack: NavigationCardStack
 } = NavigationExperimental
-
-const reducer = (state) => {
-  return {
-    index: 0,
-    routes: [(key: 'Home')]
-  }
-}
 
 class MainNav extends Component {
 
-  constructor(props, context) {
-    super(props, context)
-
+  constructor() {
+    super()
     this.state = { navState: reducer() }
   }
 
   _renderScene = (props) => {
-    switch(props.scene.route.key) {
-      case 'Home':
-        return <Home/>
-    }
+    console.log('the key', props.scene.route.key)
+
+    return (
+      (scenes.hasOwnProperty(props.scene.route.key))
+        ? scenes[props.scene.route.key]
+        : scenes.Default
+    )
   }
 
   render() {
     return (
       <NavigationCardStack
-        navigationState={this.state}
+        navigationState={this.state.navState}
         renderScene={this._renderScene} />
     )
   }

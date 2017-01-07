@@ -4,7 +4,7 @@ import {
   ListView
 } from 'react-native';
 
-export class NavList extends Component {
+class NavList extends Component {
 
   constructor() {
     super();
@@ -37,6 +37,8 @@ export class NavList extends Component {
     console.log(datum)
   }
 }
+
+export default NavList
 
 
 
