@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {
   Button,
-  ListView,
-  Text,
-  View
+  ListView
 } from 'react-native';
-import {styles} from '../styles'
 
-export default class homepage extends Component {
+export class NavList extends Component {
 
   constructor() {
     super();
@@ -24,24 +21,22 @@ export default class homepage extends Component {
     };
   }
 
-
   render() {
 
     return (
-      <View style={styles.container}>
-        <Text style={styles.h1}>Star Wars API explorer</Text>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.NavRow.bind(this)}
         />
-      </View>
     );
   }
 
-  NavRow = (rowData) => <Button title={rowData} onPress={() => PressHandler(rowData)}></Button>
+  NavRow = (rowData) => <Button title={rowData} onPress={() => this._navigate(rowData)}></Button>
+
+  _navigate = (datum) => {
+    console.log(datum)
+  }
 }
 
-const PressHandler = (datum) => {
-  console.log(datum)
-}
+
 
