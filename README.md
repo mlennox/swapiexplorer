@@ -12,8 +12,32 @@ And we get snaphots now too.
 
 ### Configuration
 
+## Navigation
+
+NavigationExperimental provides navigation utilities for react native. Despite the name, it is the de facto standard for navigation as previous Navigation components, while still usable, have been deprecated.
+ 
+[Read about NavigationExperimental in React Native docs](https://facebook.github.io/react-native/releases/0.40/docs/navigation.html#navigationexperimental)
+ 
+The Star Wars API explorer uses the standard navigation stack provided by the NavigationExperimental library. 
+
+
+
+```jsx harmony
+import { NavigationExperimental } from 'react-native'
+const { NavigationCardStack } = NavigationExperimental
+
+<NavigationCardStack
+        direction={direction}
+        navigationState={navState}
+        renderScene={() => {}}
+        renderHeader={() => {}}
+        onNavigateBack={() => {}}
+        />
+```
 
 
 ## Fetch and Caching
+
+
 
 
