@@ -21,7 +21,6 @@ NavigationExperimental provides navigation utilities for react native. Despite t
 The Star Wars API explorer uses the standard navigation stack provided by the NavigationExperimental library. 
 
 
-
 ```jsx
 import { NavigationExperimental } from 'react-native'
 const { NavigationCardStack } = NavigationExperimental
@@ -35,6 +34,24 @@ const { NavigationCardStack } = NavigationExperimental
         />
 ```
 
+**navigationState**
+
+When the component renders it binds to the state.
+ 
+**renderScene**
+
+When the state during navigation, the new route key will be passed into the specified renderScene handler. The handler simply returns the requested scene.
+
+```jsx
+_renderScene = (props) => {
+    switch (props.scene.route.key) {
+        case 'Stuff':
+            return <Stuff />
+        default:
+            return <Home />
+    }
+}
+```
 
 ## Fetch and Caching
 
