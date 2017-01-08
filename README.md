@@ -22,7 +22,7 @@ The Star Wars API explorer uses the standard navigation stack provided by the Na
 
 
 
-```jsx harmony
+```jsx
 import { NavigationExperimental } from 'react-native'
 const { NavigationCardStack } = NavigationExperimental
 
