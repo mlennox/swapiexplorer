@@ -14,19 +14,24 @@ And we get snaphots now too.
 
 ## Navigation
 
+The navigation paradigm we will be using is a stack. This allows views to be pushed onto and popped off a stack. This provides a simple 'history' of the users navigation through the app and facilitates navigating back through previous views.
+
+### View or Scene?
+
+### NavigationExperimental
+
 NavigationExperimental provides navigation utilities for react native. Despite the name, it is the de facto standard for navigation as previous Navigation components, while still usable, have been deprecated.
  
 [Read about NavigationExperimental in React Native docs](https://facebook.github.io/react-native/releases/0.40/docs/navigation.html#navigationexperimental)
  
-The Star Wars API explorer uses the standard navigation stack provided by the NavigationExperimental library. 
-
+#### NavigationCardStack 
+The Star Wars API explorer uses the standard navigation card stack provided by the NavigationExperimental library. 
 
 ```jsx
 import { NavigationExperimental } from 'react-native'
 const { NavigationCardStack } = NavigationExperimental
 
 <NavigationCardStack
-        direction={direction}
         navigationState={navState}
         renderScene={() => {}}
         renderHeader={() => {}}
@@ -34,13 +39,15 @@ const { NavigationCardStack } = NavigationExperimental
         />
 ```
 
-**navigationState**
+##### navigationState
 
 When the component renders it binds to the state.
  
-**renderScene**
+##### renderScene
 
-When the state during navigation, the new route key will be passed into the specified renderScene handler. The handler simply returns the requested scene.
+This handler should return a scene, which will be rendered as the new view.  
+
+When the navigation state updates, the new route key will be passed into the specified renderScene handler. The handler simply returns the requested scene.
 
 ```jsx
 _renderScene = (props) => {
@@ -52,6 +59,18 @@ _renderScene = (props) => {
     }
 }
 ```
+
+##### renderHeader
+
+
+##### onNavigationBack
+
+
+##### Other properties and functions
+
+There are additional properties and handlers on the NavigationCardStack object to change how the new view is rendered, how it animates onto the screen etc. but I'm not concerned with them for the moment.
+
+
 
 ## Fetch and Caching
 
