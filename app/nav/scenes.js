@@ -20,6 +20,9 @@ const scenes = {
   Vehicles: <Vehicles />
 }
 
+export const scene_keys = Object.keys(scenes)
+  .filter((scene_key) => (scene_key != default_scene))
+
 scenes.Default = scenes[default_scene]
 
 export default scenes

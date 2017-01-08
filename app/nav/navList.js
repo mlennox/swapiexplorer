@@ -3,6 +3,7 @@ import {
   Button,
   ListView
 } from 'react-native';
+import { scene_keys } from './scenes'
 
 class NavList extends Component {
 
@@ -10,14 +11,7 @@ class NavList extends Component {
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([
-        'People',
-        'Films',
-        'Starships',
-        'Vehicles',
-        'Species',
-        'Planets'
-      ]),
+      dataSource: ds.cloneWithRows(scene_keys),
     };
   }
 
