@@ -35,13 +35,22 @@ const { NavigationCardStack } = NavigationExperimental
         navigationState={navState}
         renderScene={() => {}}
         renderHeader={() => {}}
-        onNavigateBack={() => {}}
+        onNavigate={() => {}}
         />
 ```
+direction: NavigationGestureDirection,
+  navigationState: NavigationState,
+  onNavigateBack?: Function,
+  renderHeader: ?NavigationSceneRenderer,
+  renderScene: NavigationSceneRenderer,
+  cardStyle?: any,
+  style: any,
+  gestureResponseDistance?: ?number,
+  enableGestures: ?boolean
 
 ##### navigationState
 
-When the component renders it binds to the state.
+When the component renders it binds to the state. The state itself will be reduced by the ```nav/navReducer.js``` module which is outlined below.
  
 ##### renderScene
 
@@ -53,17 +62,28 @@ When the navigation state updates, the new route key will be passed into the spe
 _renderScene = (props) => {
     switch (props.scene.route.key) {
         case 'Stuff':
-            return <Stuff />
+            return <Stuff navigate={this._navigate} />
         default:
-            return <Home />
+            return <Home navigate={this._navigate} scene_keys={this.scene_keys} />
     }
 }
 ```
 
+You can see, for the first approach I'm passing in the onPress handler for each view that will be used in a back button of each view.
+
+I'm also passing in the ```scene_keys``` to the Home view, which is where we are rendering the nav list.
+
+This will change when I introduce Redux and no longer need to pass the properties around like this. 
+
+
 ##### renderHeader
 
+This function should return a NavigationHeader component that can display the page title and also a back button. 
 
-##### onNavigationBack
+
+##### onNavigation
+
+
 
 
 ##### Other properties and functions
