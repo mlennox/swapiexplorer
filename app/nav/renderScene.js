@@ -8,10 +8,12 @@ import Species from '../species/index'
 import Starships from '../starships/index'
 import Vehicles from '../vehicles/index'
 
-const scene_keys = [ 'Films', 'People', 'Planets', 'Species', 'Starships', 'Vehicles']
+export const scene_keys = [ 'Films', 'People', 'Planets', 'Species', 'Starships', 'Vehicles']
+
+export const default_scene = 'Home'
 
 export const renderScene = (navigate) => {
-
+  console.log('renderScene', scene_keys)
   return (props) => {
     switch (props.scene.route.key) {
       case 'Films':
@@ -26,7 +28,6 @@ export const renderScene = (navigate) => {
         return <Starships navigate={navigate} />
       case 'Vehicles':
         return <Vehicles navigate={navigate} />
-      case 'Home':
       default:
         return <Home navigate={navigate} scene_keys={scene_keys} />
     }

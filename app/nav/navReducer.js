@@ -1,7 +1,9 @@
 import { NavigationExperimental } from 'react-native'
-import { default_scene } from './scenes'
+import { default_scene } from './renderScene'
 
-const { NavigationStateUtils } = NavigationExperimental;
+const {
+  StateUtils: NavigationStateUtils
+} = NavigationExperimental;
 
 const default_route = {
   index: 0,
@@ -10,8 +12,12 @@ const default_route = {
 
 export default (state, action, route) => {
   if (!state) {
+    console.log('reducer - returning default route')
     return default_route
   }
+
+  console.log('reducer called', action, route)
+
   switch (action) {
     case 'push':
       return NavigationStateUtils.push(state, route)

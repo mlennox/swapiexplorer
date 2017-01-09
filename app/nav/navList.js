@@ -3,33 +3,30 @@ import {
   Button,
   ListView
 } from 'react-native';
-import { scene_keys } from './scenes'
 
 class NavList extends Component {
 
-  constructor() {
-    super();
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(scene_keys),
-    };
+  _fetchData = () => {
+    if (!this.state || !this.state.dataSource) {
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      this.state = {
+        dataSource: ds.cloneWithRows(this.props.scene_keys),
+      };
+    }
+    return this.state.dataSource
   }
 
   render() {
 
     return (
         <ListView
-          dataSource={this.state.dataSource}
+          dataSource={this._fetchData()}
           renderRow={this.NavRow.bind(this)}
         />
     );
   }
 
-  NavRow = (rowData) => <Button title={rowData} onPress={() => this._navigate(rowData)}></Button>
-
-  _navigate = (datum) => {
-    console.log(datum)
-  }
+  NavRow = (scene_key) => <Button title={scene_key} onPress={() => this.props.navigate('push', { key: scene_key })}></Button>
 }
 
 export default NavList
