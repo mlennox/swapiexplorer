@@ -41,6 +41,8 @@ class MainNav extends Component {
         onNavigateBack={this._onNavigateBack}
         onNavigate={this._onNavigate}
         renderScene={this._renderScene}
+        enableGestures={true}
+        gestureResponseDistance={100}
         />
     )
   }

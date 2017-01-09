@@ -33,24 +33,21 @@ const { NavigationCardStack } = NavigationExperimental
 
 <NavigationCardStack
         navigationState={navState}
+        enableGestures={true}
+        gestureResponseDistance={100}
         renderScene={() => {}}
         renderHeader={() => {}}
-        onNavigate={() => {}}
+        onNavigateBack={() => {}}
         />
 ```
-direction: NavigationGestureDirection,
-  navigationState: NavigationState,
-  onNavigateBack?: Function,
-  renderHeader: ?NavigationSceneRenderer,
-  renderScene: NavigationSceneRenderer,
-  cardStyle?: any,
-  style: any,
-  gestureResponseDistance?: ?number,
-  enableGestures: ?boolean
 
 ##### navigationState
 
 When the component renders it binds to the state. The state itself will be reduced by the ```nav/navReducer.js``` module which is outlined below.
+ 
+##### enableGestures and gestureResponseDistance
+
+Enaling gestures allows swiping ove the UI to control the navigation. The gestureResponseDistance determines how far from the edge of the component the gesture will register - default is 30.
  
 ##### renderScene
 
@@ -81,18 +78,26 @@ This will change when I introduce Redux and no longer need to pass the propertie
 This function should return a NavigationHeader component that can display the page title and also a back button. 
 
 
-##### onNavigation
+##### onNavigateBack
 
-
-
+I'm still not sure when this should be called - perhaps in Android when the hardware back button is pressed?
 
 ##### Other properties and functions
 
 There are additional properties and handlers on the NavigationCardStack object to change how the new view is rendered, how it animates onto the screen etc. but I'm not concerned with them for the moment.
 
-
+```
+  direction: NavigationGestureDirection,
+  onNavigateBack?: Function,
+  cardStyle?: any,
+  style: any,
+```
 
 ## Fetch and Caching
+
+Fetch is part of ES6, no need to mess a about with XMLHTTPRequests or third-party libraries.
+
+Caching is part of the API, but I have yet to test this in React Native.
 
 
 
