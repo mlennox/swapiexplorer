@@ -15,11 +15,11 @@ export default class homepage extends Component {
   }
 
   render() {
-
+    console.log('homnepage', this.props.scene_keys)
     return (
       <View style={styles.container}>
         <Text style={styles.h1}>Star Wars API explorer</Text>
-        <NavList />
+        <NavList navigate={this.props.navigate} scene_keys={this.props.scene_keys} />
       </View>
     );
   }

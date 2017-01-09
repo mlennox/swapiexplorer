@@ -1,4 +1,22 @@
-/**
- * Created by mlennox on 07/01/2017.
- */
-export default {}
+import React, { Component } from 'react'
+import { Button, View, Text } from 'react-native'
+
+const route_key = 'Vehicles'
+
+export default class stub extends Component  {
+
+  constructor() {
+    super()
+
+  }
+
+  render() {
+    return (
+      <View>
+        <Text>Hello from {route_key}</Text>
+        <Button title="Back" onPress={() => this.props.navigate('pop', { key: route_key})} />
+      </View>
+    )
+  }
+}
+
