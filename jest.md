@@ -4,7 +4,7 @@ NOTE: I gave up on Jest in the end because due to 'death by a thousand cuts' syn
 
 I can't say I'm liking it much as I don't like Jasmine much and it uses Jasmine as a stepping-off point, I prefer AVA which sorta, kinda, mostly is based on TAP. 
 
-I'll stick with it and learn it as it *is* the default and apparently *snapshots* are wonderful.
+<strike>I'll stick with it and learn it as it *is* the default and apparently *snapshots* are wonderful.</strike>
 
 ### Some caveats, pet hates, comments
 I don't like Jamsine, and because Jest appears to be a 'better Jasmine' in many ways, I don't much like the API. I have some comments below...
