@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Films from '../films/index'
+import Films from '../films/FilmsContainer'
 import Home from '../home/index'
 import People from '../people/index'
 import Planets from '../planets/index'
