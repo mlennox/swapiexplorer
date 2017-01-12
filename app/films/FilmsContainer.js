@@ -58,10 +58,9 @@ export default class FilmsContainer extends Component {
     // Is this a potential memory leak if we have closed the view?
     fetch('https://swapi.co/api/films/', { method: 'get' })
       .then((response) => {
-        console.log('films response received, films component should update')
-        // console.log('response data', response._bodyText)
         const films = JSON.parse(response._bodyText)
         this.setState({ films: films.results })
+        console.log('films response received, films component should update', Object.keys(this.state.films))
       })
       .catch((err) => console.log('films fetch', err))
   }
