@@ -59,7 +59,15 @@ export default class FilmsContainer extends Component {
     fetch('https://swapi.co/api/films/', { method: 'get' })
       .then((response) => {
         const films = JSON.parse(response._bodyText)
-        this.setState({ films: films.results })
+          .results
+          .sort((a,b) => {
+            if (a.episode_id === b.episode_id) return 0
+            let ep_a = (+(a.episode_id))
+            let ep_b = (+(b.episode_id))
+            return (ep_a > ep_b ) ? 1 : -1
+          } )
+
+        this.setState({ films: films })
         console.log('films response received, films component should update', Object.keys(this.state.films))
       })
       .catch((err) => console.log('films fetch', err))
