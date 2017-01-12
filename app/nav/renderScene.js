@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Films from '../films/FilmsContainer'
 import Home from '../home/index'
-import People from '../people/index'
+import People from '../people/PeopleContainer'
 import Planets from '../planets/index'
 import Species from '../species/index'
 import Starships from '../starships/index'
