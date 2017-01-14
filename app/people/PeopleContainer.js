@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import People from './index'
+import { fetcher } from '../fetcher/index'
 
 export default class PeopleContainer extends Component {
   constructor() {
@@ -56,15 +57,15 @@ export default class PeopleContainer extends Component {
     // Is this a potential memory leak if we have closed the view?
     // NOTE : people is paged, ten per page, total 87
     // TODO : manage paged results
-    fetch('https://swapi.co/api/people/', { method: 'get' })
-      .then((response) => {
-        const people = JSON.parse(response._bodyText).results
-
-        this.setState({ people: people })
-        console.log('people response received, films component should update', Object.keys(this.state.people))
+    fetcher('https://swapi.co/api/people/',
+      { method: 'get' },
+      response => {
+        return JSON.parse(response._bodyText).results
       })
-      .catch((err) => console.log('people fetch', err))
+      .then(people => this.setState({ people: people }))
   }
+
+
 
   componentWillUnmount() {
     // cancel fetch - when this settles down https://github.com/whatwg/fetch/issues/447
