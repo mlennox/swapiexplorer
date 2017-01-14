@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Films from './index'
+import { fetcher } from '../fetcher/'
 
 export default class FilmsContainer extends Component {
   constructor() {
@@ -55,23 +56,18 @@ export default class FilmsContainer extends Component {
   }
 
   componentDidMount() {
-    // Is this a potential memory leak if we have closed the view?
-    fetch('https://swapi.co/api/films/', { method: 'get' })
-      .then((response) => {
-        const films = JSON.parse(response._bodyText)
-          .results
-          .sort((a,b) => {
-            if (a.episode_id === b.episode_id) return 0
-            let ep_a = (+(a.episode_id))
-            let ep_b = (+(b.episode_id))
-            return (ep_a > ep_b ) ? 1 : -1
-          } )
-
-        this.setState({ films: films })
-        console.log('films response received, films component should update', Object.keys(this.state.films))
-      })
-      .catch((err) => console.log('films fetch', err))
+    fetcher('https://swapi.co/api/films/', {method: 'get'}, this.results_parser)
+      .then(films => this.setState({ films: films }))
   }
+
+  results_parser = response => JSON.parse(response._bodyText)
+    .results
+    .sort((a,b) => {
+      if (a.episode_id === b.episode_id) return 0
+      let ep_a = (+(a.episode_id))
+      let ep_b = (+(b.episode_id))
+      return (ep_a > ep_b ) ? 1 : -1
+    })
 
   componentWillUnmount() {
     // cancel fetch - when this settles down https://github.com/whatwg/fetch/issues/447
