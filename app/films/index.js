@@ -11,13 +11,14 @@ export default class Films extends Component  {
     super(props)
     ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      filmsDataSource: ds.cloneWithRows(props.films)
+      filmsDataSource: ds.cloneWithRows({})
     }
   }
 
   componentWillReceiveProps(props) {
+    console.log('will recieve - - - - - - -', props)
     this.setState({
-      filmsDataSource: ds.cloneWithRows(props.films)
+      filmsDataSource: ds.cloneWithRows(props.data)
     })
   }
 
