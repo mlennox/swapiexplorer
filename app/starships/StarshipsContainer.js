@@ -1,34 +1,12 @@
 import React, { Component } from 'react'
-import DataContainerBase from '../containers/DataContainerBase'
+import DC_HOC from '../containers/DataContainerHOC'
 import Starships from './index'
 
+class StarshipsContainer extends Component {
 
-export default class StarshipsContainer extends DataContainerBase {
-
-  constructor() {
-    super()
-    this.state = {
-      data: {}
-    }
-    this.fetch_details = {
-      url: 'https://swapi.co/api/starships/',
-      options: { method: 'get' }
-    }
-  }
-
-  results_parser = response => {
-    try {
-      return JSON.parse(response._bodyText).results
-    }
-    catch (err) {
-      console.log('results parser error - - - - - - - - - - -', err)
-    }
-  }
-
-  results_assigner = results => {
-    this.setState({
-      data: results
-    })
+  fetch_details = {
+    url: 'https://swapi.co/api/starships/',
+    options: { method: 'get' }
   }
 
   render() {
@@ -36,3 +14,5 @@ export default class StarshipsContainer extends DataContainerBase {
   }
 
 }
+
+export default DC_HOC(StarshipsContainer)
