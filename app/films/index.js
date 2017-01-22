@@ -9,7 +9,6 @@ export default class Films extends Component  {
 
   constructor(props) {
     super(props)
-    // // TODO: this should be split out into a separate films list component?
     ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       filmsDataSource: ds.cloneWithRows(props.films)
@@ -17,7 +16,6 @@ export default class Films extends Component  {
   }
 
   componentWillReceiveProps(props) {
-    console.log('componentWillReceiveProps props')
     this.setState({
       filmsDataSource: ds.cloneWithRows(props.films)
     })

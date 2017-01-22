@@ -57,13 +57,15 @@ export default class PeopleContainer extends Component {
     // Is this a potential memory leak if we have closed the view?
     // NOTE : people is paged, ten per page, total 87
     // TODO : manage paged results
-    fetcher('https://swapi.co/api/people/', { method: 'get' }, this.results_parser)
-      .then(people => this.setState({ people: people }))
+    fetcher('https://swapi.co/api/people/',
+      { method: 'get' },
+      this.results_parser
+    ).then(this.results_setter)
   }
 
-  results_parser = response => {
-    return JSON.parse(response._bodyText).results
-  }
+  results_parser = response => JSON.parse(response._bodyText).results
+
+  results_setter = result => this.setState({ people : result })
 
   componentWillUnmount() {
     // cancel fetch - when this settles down https://github.com/whatwg/fetch/issues/447
