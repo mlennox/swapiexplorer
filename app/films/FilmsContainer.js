@@ -6,8 +6,8 @@ export default class PlanetsContainer extends DataContainerBase {
 
   constructor() {
     super()
-
-     /* Format of data from films endpoint
+      /***
+     * Format of data from films endpoint
      {
        "count": 7,
        "next": null,

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import DataContainerBase from '../containers/DataContainerBase'
 import People from './index'
-import { fetcher } from '../fetcher/index'
 
-export default class PeopleContainer extends Component {
+export default class PlanetsContainer extends DataContainerBase {
+
   constructor() {
     super()
     /***
@@ -45,29 +46,30 @@ export default class PeopleContainer extends Component {
      }
      */
     this.state = {
-      people: {}
+      data: {}
+    }
+    this.fetch_details = {
+      url: 'https://swapi.co/api/people/',
+      options: { method: 'get' }
     }
   }
 
+  results_parser = response => {
+    try {
+      return JSON.parse(response._bodyText).results
+    }
+    catch (err) {
+      console.log('results parser error - - - - - - - - - - -', err)
+    }
+  }
+
+  results_assigner = results => {
+    this.setState({
+      data: results
+    })
+  }
+
   render() {
-    return <People people={this.state.people} navigate={this.props.navigate} />
-  }
-
-  componentDidMount() {
-    // Is this a potential memory leak if we have closed the view?
-    // NOTE : people is paged, ten per page, total 87
-    // TODO : manage paged results
-    fetcher('https://swapi.co/api/people/',
-      { method: 'get' },
-      this.results_parser
-    ).then(this.results_setter)
-  }
-
-  results_parser = response => JSON.parse(response._bodyText).results
-
-  results_setter = result => this.setState({ people : result })
-
-  componentWillUnmount() {
-    // cancel fetch - when this settles down https://github.com/whatwg/fetch/issues/447
+    return <People data={this.state.data} navigate={this.props.navigate} />
   }
 }

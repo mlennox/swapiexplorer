@@ -4,7 +4,7 @@ import Films from '../films/FilmsContainer'
 import Home from '../home/index'
 import People from '../people/PeopleContainer'
 import Planets from '../planets/PlanetsContainer'
-import Species from '../species/index'
+import Species from '../species/SpeciesContainer'
 import Starships from '../starships/index'
 import Vehicles from '../vehicles/index'
 
