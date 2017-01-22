@@ -6,7 +6,7 @@ import People from '../people/PeopleContainer'
 import Planets from '../planets/PlanetsContainer'
 import Species from '../species/SpeciesContainer'
 import Starships from '../starships/StarshipsContainer'
-import Vehicles from '../vehicles/index'
+import Vehicles from '../vehicles/VehiclesContainer'
 
 export const scene_keys = [ 'Films', 'People', 'Planets', 'Species', 'Starships', 'Vehicles']
 

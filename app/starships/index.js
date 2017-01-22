@@ -4,7 +4,7 @@ import ListHOC from '../containers/ListHOC'
 
 class starships extends Component {
   route_key = 'Starships'
-  Row = (starship) => <Text>{starship.name} ({starship.crew})</Text>
+  Row = (starship) => <Text>{starship.name} (crew : {starship.crew})</Text>
 }
 
 export default ListHOC(starships)
