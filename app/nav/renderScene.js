@@ -5,7 +5,7 @@ import Home from '../home/index'
 import People from '../people/PeopleContainer'
 import Planets from '../planets/PlanetsContainer'
 import Species from '../species/SpeciesContainer'
-import Starships from '../starships/index'
+import Starships from '../starships/StarshipsContainer'
 import Vehicles from '../vehicles/index'
 
 export const scene_keys = [ 'Films', 'People', 'Planets', 'Species', 'Starships', 'Vehicles']

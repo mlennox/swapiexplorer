@@ -1,22 +1,36 @@
 import React, { Component } from 'react'
-import { Button, View, Text } from 'react-native'
+import { Text } from 'react-native'
+import ListHOC from '../containers/ListHOC'
 
-const route_key = 'Starships'
-
-export default class stub extends Component  {
-
-  constructor() {
-    super()
-
-  }
-
-  render() {
-    return (
-      <View>
-        <Text>Hello from {route_key}</Text>
-        <Button title="Back" onPress={() => this.props.navigate('pop', { key: route_key})} />
-      </View>
-    )
-  }
+class starships extends Component {
+  route_key = 'Starships'
+  Row = (starship) => <Text>{starship.name} ({starship.crew})</Text>
 }
+
+export default ListHOC(starships)
+
+/***
+ * {
+            "name": "Sentinel-class landing craft",
+            "model": "Sentinel-class landing craft",
+            "manufacturer": "Sienar Fleet Systems, Cyngus Spaceworks",
+            "cost_in_credits": "240000",
+            "length": "38",
+            "max_atmosphering_speed": "1000",
+            "crew": "5",
+            "passengers": "75",
+            "cargo_capacity": "180000",
+            "consumables": "1 month",
+            "hyperdrive_rating": "1.0",
+            "MGLT": "70",
+            "starship_class": "landing craft",
+            "pilots": [],
+            "films": [
+                "http://swapi.co/api/films/1/"
+            ],
+            "created": "2014-12-10T15:48:00.586000Z",
+            "edited": "2014-12-22T17:35:44.431407Z",
+            "url": "http://swapi.co/api/starships/5/"
+        },
+ */
 
