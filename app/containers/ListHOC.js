@@ -15,7 +15,7 @@ export default ListHOC = (Wrapped) => {
     }
 
     componentWillReceiveProps(props) {
-      console.log('will receive props - - - - - - - - - -', props.data)
+      console.log('ListHOC will receive')
       this.setState({
         data_source: ds.cloneWithRows(props.data)
       })
