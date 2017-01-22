@@ -1,38 +1,18 @@
 import React, { Component } from 'react'
-import DataContainerBase from '../containers/DataContainerBase'
-import Planet from './index'
+import DC_HOC from '../containers/DataContainerHOC'
+import Planets from './index'
 
+class PlanetsContainer extends Component {
 
-export default class PlanetsContainer extends DataContainerBase {
-
-  constructor() {
-    super()
-    this.state = {
-      data: {}
-    }
-    this.fetch_details = {
-      url: 'https://swapi.co/api/planets/',
-      options: { method: 'get' }
-    }
-  }
-
-  results_parser = response => {
-    try {
-      return JSON.parse(response._bodyText).results
-    }
-    catch (err) {
-      console.log('results parser error - - - - - - - - - - -', err)
-    }
-  }
-
-  results_assigner = results => {
-    this.setState({
-      data: results
-    })
+  fetch_details = {
+    url: 'https://swapi.co/api/planets/',
+    options: { method: 'get' }
   }
 
   render() {
-    return <Planet data={this.state.data} navigate={this.props.navigate} />
+    return <Planets data={this.state.data} navigate={this.props.navigate} />
   }
 
 }
+
+export default DC_HOC(PlanetsContainer)
