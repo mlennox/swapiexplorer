@@ -1,35 +1,29 @@
 {
   "name": "swapiexplorer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test:nowatch": "nyc ava",
-    "test": "nyc ava --watch"
-  },
   "dependencies": {
-    "pino": "^3.1.0",
-    "react": "15.4.1",
-    "react-native": "0.39.1"
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-router-dom": "^4.4.0-beta.6",
+    "react-scripts": "2.1.1"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "ava": "~0.17.0",
-    "babel-preset-react-native": "~1.9.0",
-    "enzyme": "~2.6.0",
-    "mockery": "~2.0.0",
-    "nyc": "~10.0.0",
-    "react-addons-test-utils": "~15.4.1",
-    "react-native-mock": "~0.2.9"
-  },
-  "ava": {
-    "files": [
-      "**/*.test.js"
-    ],
-    "babel": "inherit",
-    "require": [
-      "babel-register",
-      "babel-polyfill",
-      "react-native-mock/mock"
-    ]
+    "react-testing-library": "^5.2.3"
   }
 }
