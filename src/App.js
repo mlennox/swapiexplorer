@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Films from "./films";
+import People from "./people";
+import Planets from "./planets";
+import Species from "./species";
+import Ships from "./ships";
+import Vehicles from "./vehicles";
 
 const Home = () => <h1>Home</h1>;
-const People = () => <h1>People</h1>;
-const Planets = () => <h1>Planets</h1>;
-const Species = () => <h1>Species</h1>;
-const Ships = () => <h1>Ships</h1>;
-const Vehicles = () => <h1>Vehicles</h1>;
-const Films = () => <h1>Films</h1>;
 
 const Links = () => (
   <nav>

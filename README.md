@@ -41,7 +41,7 @@ It's good to document as you go - storybook brings the components and their beha
 I'll also be turning this into a progressive web app, the basic requirements of which are:
 
 - serve over HTTPS
-- provide a manifest
+- provide a manifest (create react app creates this at `/public/manifest.json`)
 - register a `ServiceWorker`
 
 ## Tutorial
