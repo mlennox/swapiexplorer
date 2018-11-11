@@ -1,95 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`nav :  click link should do something 1`] = `
-<DocumentFragment>
-  <nav>
-    <a
-      aria-current="page"
-      class="active"
-      href="/"
-    >
-      Home
-    </a>
-    <a
-      href="/people"
-    >
-      People
-    </a>
-    <a
-      href="/planets"
-    >
-      Planets
-    </a>
-    <a
-      href="/species"
-    >
-      Species
-    </a>
-    <a
-      href="/ships"
-    >
-      Ships
-    </a>
-    <a
-      href="/vehicles"
-    >
-      Vehicles
-    </a>
-    <a
-      href="/films"
-    >
-      Films
-    </a>
-  </nav>
-  <h1>
-    Home
-  </h1>
-</DocumentFragment>
-`;
-
 exports[`nav :  should render 1`] = `
-<DocumentFragment>
-  <nav>
-    <a
-      aria-current="page"
-      class="active"
-      href="/"
-    >
-      Home
-    </a>
-    <a
-      href="/people"
-    >
-      People
-    </a>
-    <a
-      href="/planets"
-    >
-      Planets
-    </a>
-    <a
-      href="/species"
-    >
-      Species
-    </a>
-    <a
-      href="/ships"
-    >
-      Ships
-    </a>
-    <a
-      href="/vehicles"
-    >
-      Vehicles
-    </a>
-    <a
-      href="/films"
-    >
-      Films
-    </a>
-  </nav>
-  <h1>
+<nav>
+  <a
+    aria-current="page"
+    class="active"
+    href="/"
+  >
     Home
-  </h1>
-</DocumentFragment>
+  </a>
+  <a
+    href="/people"
+  >
+    People
+  </a>
+  <a
+    href="/planets"
+  >
+    Planets
+  </a>
+  <a
+    href="/species"
+  >
+    Species
+  </a>
+  <a
+    href="/ships"
+  >
+    Ships
+  </a>
+  <a
+    href="/vehicles"
+  >
+    Vehicles
+  </a>
+  <a
+    href="/films"
+  >
+    Films
+  </a>
+</nav>
 `;

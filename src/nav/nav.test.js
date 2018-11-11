@@ -1,18 +1,23 @@
 import React from "react";
-import Nav from "./index";
-import { render, asFragment, fireEvent } from "react-testing-library";
+import Nav from "./nav";
+import { render, cleanup, container, fireEvent } from "react-testing-library";
 import "jest-dom/extend-expect";
+
+afterEach(cleanup);
 
 describe("nav : ", () => {
   test("should render", () => {
-    const { asFragment } = render(<Nav />);
-    expect(asFragment()).toMatchSnapshot();
+    const { container } = render(<Nav />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test("click link should do something", () => {
-    const { getByText, asFragment } = render(<Nav />);
+    const { container, getByText } = render(<Nav />);
     const peopleLink = getByText("People");
+    console.log();
+    expect(peopleLink.attributes.getNamedItem("class")).toBeNull();
     fireEvent.click(peopleLink);
-    expect(asFragment()).toMatchSnapshot();
+    const peopleLinkClass = peopleLink.attributes.getNamedItem("class");
+    expect(peopleLinkClass.value).toEqual("active");
   });
 });

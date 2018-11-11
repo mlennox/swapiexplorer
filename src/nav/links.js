@@ -5,7 +5,7 @@ const activeLinkClass = "active";
 
 const Links = () => (
   <nav>
-    <NavLink activeClassName={activeLinkClass} to="/">
+    <NavLink exact={true} activeClassName={activeLinkClass} to="/">
       Home
     </NavLink>
     <NavLink activeClassName={activeLinkClass} to="/people">
