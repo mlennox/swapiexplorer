@@ -12,7 +12,7 @@ import Links from "./links";
 const Routes = () => (
   <Router>
     <Links />
-    <Route exact={true} path="/" component={Home} />
+    <Route exact path="/" component={Home} />
     <Route path="/people" component={People} />
     <Route path="/planets" component={Planets} />
     <Route path="/species" component={Species} />
