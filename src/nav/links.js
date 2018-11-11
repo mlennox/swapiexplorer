@@ -1,15 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const activeLinkClass = "active";
 
 const Links = () => (
   <nav>
-    <Link to="/">Home</Link>
-    <Link to="/people">People</Link>
-    <Link to="/planets">Planets</Link>
-    <Link to="/species">Species</Link>
-    <Link to="/ships">Ships</Link>
-    <Link to="/vehicles">Vehicles</Link>
-    <Link to="/films">Films</Link>
+    <NavLink activeClassName={activeLinkClass} to="/">
+      Home
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/people">
+      People
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/planets">
+      Planets
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/species">
+      Species
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/ships">
+      Ships
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/vehicles">
+      Vehicles
+    </NavLink>
+    <NavLink activeClassName={activeLinkClass} to="/films">
+      Films
+    </NavLink>
   </nav>
 );
 
