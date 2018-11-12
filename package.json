@@ -15,8 +15,7 @@
     "eject": "react-scripts eject",
     "eslint-config-check": "eslint --print-config . | eslint-config-prettier-check",
     "lint": "eslint src/**/*.*",
-    "precommit": "npm run lint",
-    "prepush": "npm jest"
+    "precommit": "npm run lint"
   },
   "eslintConfig": {
     "extends": "react-app"
