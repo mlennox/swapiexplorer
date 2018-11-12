@@ -16,7 +16,7 @@
     "eslint-config-check": "eslint --print-config . | eslint-config-prettier-check",
     "lint": "eslint src/**/*.*",
     "precommit": "npm run lint",
-    "prepush": "npm test"
+    "prepush": "npm jest"
   },
   "eslintConfig": {
     "extends": "react-app"
