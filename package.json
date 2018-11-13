@@ -17,11 +17,9 @@
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "5.6.0",
     "eslint-config-react-app": "^3.0.5",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
-    "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "file-loader": "2.0.0",
@@ -60,7 +58,13 @@
     "test": "node scripts/test.js",
     "eslint-config-check": "eslint --print-config . | eslint-config-prettier-check",
     "lint": "eslint src/**/*.*",
-    "precommit": "npm run lint"
+    "format": "eslint --fix --fix-type layout src/**/*.*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -73,7 +77,9 @@
   ],
   "devDependencies": {
     "ajv": "^6.5.5",
+    "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
