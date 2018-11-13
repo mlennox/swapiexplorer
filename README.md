@@ -8,7 +8,7 @@ I used Node v10.13.0 and npm v6.4.1
 
 ## Setup
 
-This app was created using `npx create-react-app swapiexplorer` which generates a [new readme file which you can read, here](./README.create-react-app.md)
+This app was created using `npx create-react-app swapiexplorer` which generates a [new readme file which you can read, here](./README.create-react-app.md) - however I soon 'ejected' the app
 
 ## Starting Goals
 
@@ -20,17 +20,25 @@ Yeah.
 
 ### Thunk, Sagas or Apollo?
 
-The SWAPI [REST endpoint](http swapi.co/api) is where I'll start.
+The SWAPI [REST endpoint](http://swapi.co/api) is where I'll start. I may skip thunks and start with sagas.
 
 We have access to a [SWAPI GraphQL endpoint](https://graphql.org/swapi-graphql/) so I'll also implement some Apollo based api calls
 
 ### Render props
 
-At work we use the HOC approach. I'm going to use render props / component injection.
+At work we use the HOC approach. I'm also going to use render props / component injection.
 
 ### Testing
 
 I'll be using Jest and Kent Dodds [react-testing-library](https://github.com/kentcdodds/react-testing-library)
+
+#### UI Tests
+
+I'll be having a look at [puppeteer](https://github.com/GoogleChrome/puppeteer). I'm not sure it could be considered for integration testing, but I'll see how far it can be pushed.
+
+#### Integration tests - e2e
+
+I'll also have a look at [Cypress.io](https://www.cypress.io/features/) as they provide a free to use test runner in addition to their paid insights dashboard. The free version may be useless without the dashboard, but I'll see...
 
 ### Storybook
 
